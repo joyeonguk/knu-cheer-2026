@@ -139,6 +139,11 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;font-family:"Malan
 .kitrow p{color:#c9d8f6;margin-top:12px}
 .kn{font-weight:700;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:clamp(70px,10vw,120px);line-height:1;color:#fff;margin-top:18px}
 .kn small{font-size:.3em;margin-left:6px;color:#c9d8f6}
+.kitpic{margin:0}
+.kitpic img{width:100%;border-radius:14px;box-shadow:0 24px 50px -24px rgba(0,0,0,.55)}
+.kitpic figcaption{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.kitpic figcaption span{padding:6px 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;color:#dce6fb;font-size:15px}
+.kitpic figcaption b{color:#fff;margin-right:4px}
 .items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;text-align:center}
 .items svg{width:100%;max-width:120px;height:auto;margin:0 auto;display:block;overflow:visible}
 .items b{display:block;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:22px;font-weight:700;margin-top:8px}
@@ -298,13 +303,12 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;font-family:"Malan
   <div class="rv">
     <h2>수험생 한 사람에<br>한 세트씩</h2>
     <p>시험장에 들어가기 전 손에 쥐여 줄 격려물품입니다.</p>
-    <div class="kn">40<small>세트</small></div>
+    <div class="kn">30<small>세트</small></div>
   </div>
-  <div class="items rv">
-    <div><svg viewBox="0 0 120 130" aria-hidden="true"><g class="bob"><rect x="28" y="14" width="64" height="96" rx="10" fill="#f05a22"/><rect x="28" y="14" width="64" height="20" rx="10" fill="#c9430f"/><path d="M44 62c8-9 24-9 32 0M44 82c8-9 24-9 32 0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/></g><path class="steam" d="M52 6q4-6 0-12M68 6q4-6 0-12" stroke="#ffd2bf" stroke-width="4" fill="none" stroke-linecap="round"/></svg><b>핫팩</b><span>1개</span></div>
-    <div><svg viewBox="0 0 120 130" aria-hidden="true"><g class="bob"><rect x="48" y="6" width="24" height="14" rx="3" fill="#0b9b4b"/><path d="M45 20h30l7 16v78a6 6 0 0 1-6 6H44a6 6 0 0 1-6-6V36z" fill="#dcecf8"/><path d="M38 60h44v34H38z" fill="#c8913c"/><path d="M46 28h9v86h-9z" fill="#fff" opacity=".6"/></g></svg><b>보리차</b><span>1개</span></div>
-    <div><svg viewBox="0 0 120 130" aria-hidden="true"><g class="bob"><g transform="rotate(-14 60 50)"><rect x="12" y="38" width="96" height="26" rx="5" fill="#ffffff"/><rect x="12" y="38" width="14" height="26" rx="4" fill="#c9d8f6"/><rect x="94" y="38" width="14" height="26" rx="4" fill="#c9d8f6"/><rect x="36" y="46" width="44" height="10" rx="2" fill="#f05a22"/></g><g transform="rotate(-14 60 86)"><rect x="12" y="74" width="96" height="26" rx="5" fill="#0b9b4b"/><rect x="12" y="74" width="14" height="26" rx="4" fill="#087a3a"/><rect x="94" y="74" width="14" height="26" rx="4" fill="#087a3a"/><rect x="36" y="82" width="44" height="10" rx="2" fill="#fff"/></g></g></svg><b>에너지바</b><span>2개</span></div>
-  </div>
+  <figure class="kitpic rv">
+    <img src="kit.jpg" alt="격려물품 1세트: 핫팩 1개, 보리차 1개, 에너지바 2개를 지퍼백에 담고 합격 기원 띠지를 두른 모습">
+    <figcaption><span><b>핫팩</b> 1개</span><span><b>보리차</b> 1개</span><span><b>에너지바</b> 2개</span></figcaption>
+  </figure>
 </div></section>
 
 
