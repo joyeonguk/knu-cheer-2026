@@ -37,10 +37,10 @@ p{margin:0}
 .hero .fx{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
 .orb{transform-box:fill-box;transform-origin:center;animation:turn 90s linear infinite}
 .orb.b{animation-direction:reverse;animation-duration:120s}
-.brand{display:inline-flex;align-items:center;gap:12px;padding:6px 18px 6px 6px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.04);animation:fade .8s ease both}
-.emb{width:40px;height:40px;border-radius:50%;background:#fff;flex:none}
+.brand{display:inline-flex;align-items:center;gap:clamp(12px,1.6vw,18px);padding:8px clamp(18px,2.4vw,30px) 8px 8px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.04);animation:fade .8s ease both}
+.emb{width:clamp(56px,6vw,76px);height:clamp(56px,6vw,76px);box-shadow:0 0 0 3px rgba(217,184,116,.35);border-radius:50%;background:#fff;flex:none}
 .emb img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.org{font-size:14px;font-weight:500;color:#cfdaf1;letter-spacing:.01em}
+.org{font-size:clamp(17px,2vw,24px);font-weight:700;color:#fff;letter-spacing:-.01em}
 .eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:clamp(28px,3.4vw,40px);font-size:clamp(14px,1.5vw,16px);font-weight:700;letter-spacing:.18em;color:#d9b874;animation:fade .8s .1s ease both}
 .eyebrow::before,.eyebrow::after{content:"";width:clamp(28px,6vw,64px);height:1px;background:linear-gradient(90deg,transparent,#d9b874)}
 .eyebrow::after{transform:scaleX(-1)}
@@ -64,7 +64,7 @@ p{margin:0}
 .cd small{font-size:.48em;color:#c9b585;margin:0 6px 0 2px;font-weight:400}
 @keyframes turn{to{transform:rotate(360deg)}}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}}
-@media(max-width:700px){.clock{grid-template-columns:minmax(0,1fr);gap:8px}.clock>div{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:right}.clock .lab{text-align:left}.clock .val,.cd{margin-top:0}.org{font-size:13px}}
+@media(max-width:700px){.clock{grid-template-columns:minmax(0,1fr);gap:8px}.clock>div{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:right}.clock .lab{text-align:left}.clock .val,.cd{margin-top:0}.org{font-size:15px;text-align:left;line-height:1.35}.brand{border-radius:20px}}
 
 
 .banner{padding-block:clamp(28px,4vw,48px)}
@@ -241,7 +241,7 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;font-family:"Malan
   <p class="eyebrow">2026 충청남도 중등교사</p>
   <h1><span class="l1"><b>임용시험 1차</b></span><span class="l2"><b>응원 행사</b></span></h1>
   <div class="rule" aria-hidden="true"><i></i><b></b><i></i></div>
-  <p class="sub">선·후배님의 합격을 기원합니다</p>
+  <p class="sub">동문의 합격을 기원합니다</p>
   <div class="clock">
     <div><div class="lab">일시</div><div class="val">11월 28일(토) 07:00<small>시험장 정문 집결</small></div></div>
     <div><div class="lab">장소</div><div class="val">천안오성중학교<small>천안시 서북구 두정고1길 25</small></div></div>
