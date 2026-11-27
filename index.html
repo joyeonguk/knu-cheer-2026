@@ -92,25 +92,25 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;font-family:"Malan
 .dl dd{margin:0}
 
 .prep{background:light-dark(#f2f5fb,#0f172b)}
-.ph{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:0;margin-top:34px;position:relative}
+.ph{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:34px;position:relative}
 .ph::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:var(--rule)}
-.phfill{position:absolute;left:0;top:11px;height:2px;width:0;background:var(--orange);transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.phfill{position:absolute;left:0;top:11px;height:2px;width:0;background:var(--blueT);transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
 .pc{position:relative;padding:0 clamp(16px,2.4vw,32px) 0 0}
 .pc+.pc{padding-left:clamp(16px,2.4vw,32px);border-left:1px solid var(--rule)}
 .pc+.pc .dot{left:clamp(16px,2.4vw,32px)}
 .dot{position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--rule)}
 .pc.done .dot{background:var(--blueT);border-color:var(--blueT)}
-.pc.now .dot{background:var(--orange);border-color:var(--orange);animation:beat 1.4s ease-in-out infinite}
+.pc.now .dot{background:var(--blueT);border-color:var(--blueT);animation:beat 1.4s ease-in-out infinite}
 .phd{padding-top:38px;display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.phd .nm{font-size:14px;font-weight:700;color:var(--soft)}
-.phd .st{font-size:13px;font-weight:700;white-space:nowrap;color:var(--soft)}
-.pc.now .st{color:var(--orange)}
-.pc.done .st{color:var(--blueT)}
-.big{font-size:clamp(26px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:4px 0 16px;white-space:nowrap}
-.it{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:2px 14px;padding:14px 0;border-top:1px solid var(--rule)}
-.it h3{font-size:17px}
-.it .by{font-size:14px;font-weight:700;color:var(--blueT);text-align:right;white-space:nowrap}
-.it p{grid-column:1/3;font-size:15px;color:var(--soft)}
+.phd .nm{font-size:16px;font-weight:700;color:var(--soft)}
+.phd .st{font-size:14px;font-weight:700;white-space:nowrap;color:var(--soft)}
+.pc.now .st{color:var(--blueT)}
+.pc.done .st{color:var(--ink)}
+.big{font-size:clamp(28px,3.2vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:4px 0 16px;white-space:nowrap}
+.it{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:4px 14px;padding:16px 0;border-top:1px solid var(--rule)}
+.it h3{font-size:19px}
+.it .by{font-size:15px;font-weight:700;color:var(--soft);text-align:right;white-space:nowrap}
+.it p{grid-column:1/3;font-size:16px;color:var(--soft)}
 @media(max-width:760px){.ph{grid-template-columns:minmax(0,1fr)}.ph::before,.phfill{display:none}.pc{padding:0 0 8px 34px!important;border-left:2px solid var(--rule)!important;margin-left:8px}.pc+.pc{padding-left:34px}.dot,.pc+.pc .dot{left:-10px!important;top:0}.phd{padding-top:0}}
 
 .money{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);align-items:end}
@@ -363,9 +363,13 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;font-family:"Malan
       {t:"경비 사전 안내·동의",p:"충남 모임 단톡방 안내, 응원 참석 안내",by:"조영욱"},
       {t:"격려물품 40세트",p:"핫팩 1, 보리차 1, 에너지바 2",by:"총동문회"}]},
     {nm:"행사 당일",big:"11. 28.(토)",from:at("00:00",28),to:at("00:00",29),items:[
-      {t:"응원 행사",p:"07:00 집결, 응원과 물품 전달, 기념촬영, 조식",by:"참석 동문"}]},
+      {t:"집결, 현수막 설치",p:"07:00 천안오성중학교 정문",by:"참석 동문"},
+      {t:"수험생 응원, 격려물품 전달",p:"07:00 ~ 08:30 격려물품 40세트를 한 사람씩 전달",by:"참석 동문"},
+      {t:"현수막 앞 기념촬영",p:"08:30 시험장 정문",by:"참석자 전원"},
+      {t:"조식",p:"08:40 이순신소국밥, 소머리국밥 50인분",by:"총동문회"}]},
     {nm:"후속",big:"12. 3.(목)",from:new Date("2026-12-03T00:00:00+09:00").getTime(),to:new Date("2026-12-04T00:00:00+09:00").getTime(),items:[
-      {t:"격려금 전달식",p:"16:00, 이은상 회장님 전달, 최정용 님 수행",by:"총동문회"}]}
+      {t:"격려금 전달식",p:"16:00, 이은상 회장님 전달, 최정용 님 수행",by:"총동문회"},
+      {t:"행사 결과 정리",p:"현장 사진과 계획 대비 결과를 이 페이지 '행사 결과' 탭에 게시",by:"조영욱"}]}
   ];
   const nowT=Date.now();
   let reached=0;
