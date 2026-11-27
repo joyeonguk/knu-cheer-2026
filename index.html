@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>임용시험 1차 응원 행사</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* VOICE  exam-morning cheering: loud like a banner, plain like a notice on a board
+   IDEA   the printed banner and the cheering squad at the school gate
+   PICTURE huge banner lettering + live countdown, a scrolling cheer ribbon, the real banner
+   COLOUR KNU blue #1a47a0 flat, cheer green #0b9b4b, orange #f05a22 for 합격, white
+   TYPE   Hancom MalangMalang bold + regular
+   LAYOUT full-width bands, rules not cards; stacked on phone */
+@font-face{font-family:"Malang";font-weight:400;font-display:swap;src:local("한컴 말랑말랑 Regular"),local("한컴 말랑말랑"),local("HancomMalangMalang-Regular"),local("Hancom MalangMalang Regular"),local("HancomMalangMalang")}
+@font-face{font-family:"Malang";font-weight:700;font-display:swap;src:local("한컴 말랑말랑 Bold"),local("HancomMalangMalang-Bold"),local("Hancom MalangMalang Bold")}
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0a1020);--ink:light-dark(#0f1726,#eef2fa);--soft:light-dark(#596377,#9aa5bb);--rule:light-dark(#d9dfea,#26314a);--blue:#1a47a0;--blueT:light-dark(#1a47a0,#7aa3f5);--green:#0b9b4b;--greenT:light-dark(#0b8a43,#45d488);--orange:#f05a22}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;overflow-x:clip;word-break:keep-all}
+img{max-width:100%;display:block}
+h1,h2,.disp{font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.08;margin:0}
+h2{font-size:clamp(30px,4.4vw,46px)}
+h3{font-size:18px;font-weight:900;margin:0}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto}
+.band{padding-block:clamp(44px,6vw,88px);padding-left:max(5vw,18px,env(safe-area-inset-left,0px));padding-right:max(5vw,18px,env(safe-area-inset-right,0px))}
+
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding-top:clamp(40px,5vw,64px);padding-bottom:0;background:radial-gradient(ellipse 60% 80% at 50% 30%,#18397f 0%,#0d2250 55%,#081736 100%)}
+.hero>*{position:relative;z-index:1}
+.hero .fx{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
+.orb{transform-box:fill-box;transform-origin:center;animation:turn 60s linear infinite}
+.orb.b{animation-direction:reverse;animation-duration:80s}
+.emb{width:clamp(68px,7vw,84px);height:clamp(68px,7vw,84px);margin:0 auto;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.14);animation:fade .8s ease both}
+.emb img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.org{margin-top:12px;font-size:15px;font-weight:700;color:#b8c8ea;animation:fade .8s .1s ease both}
+.hero h1{margin:clamp(18px,2.4vw,26px) 0 0;line-height:1.12;letter-spacing:-.03em}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 span>b{display:inline-block;font-weight:700;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.l1{font-size:clamp(19px,2.4vw,26px);color:#d9b874}
+.l2{font-size:clamp(36px,6vw,68px);color:#fff}
+.l2>b{animation-delay:.1s!important}
+.sub{margin-top:14px;font-size:clamp(16px,1.8vw,19px);color:#dfe7f7;animation:fade .8s .4s ease both}
+.clock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:900px;margin:clamp(28px,4vw,44px) auto 0;border-top:1px solid rgba(217,184,116,.45);animation:fade .8s .6s ease both}
+.clock>div{padding:16px 12px 22px}
+.clock>div+div{border-left:1px solid rgba(255,255,255,.12)}
+.clock .lab{font-size:13px;font-weight:700;color:#d9b874}
+.clock .val{font-size:clamp(16px,1.8vw,19px);font-weight:700;margin-top:2px}
+.clock .val small{display:block;font-size:13px;font-weight:400;color:#a9b9da}
+.cd{font-weight:700;font-size:clamp(20px,2.4vw,26px);line-height:1.25;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cd small{font-size:.5em;color:#a9b9da;margin:0 5px 0 2px;font-weight:400}
+@keyframes turn{to{transform:rotate(360deg)}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+@media(max-width:700px){.clock{grid-template-columns:minmax(0,1fr)}.clock>div{padding:12px 0}.clock>div+div{border-left:0;border-top:1px solid rgba(255,255,255,.1)}}
+
+
+.banner{padding-block:clamp(28px,4vw,48px)}
+.banner img{width:100%;box-shadow:0 18px 40px -24px rgba(10,30,80,.5)}
+.banner p{font-size:14px;color:var(--soft);margin-top:12px}
+
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:3px solid var(--ink)}
+.grid4>div{padding:20px 20px 4px 0;border-right:1px solid var(--rule);margin-right:20px}
+.grid4>div:last-child{border-right:0}
+.k{font-size:14px;font-weight:700;color:var(--soft)}
+.v{font-weight:700;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:clamp(24px,2.6vw,30px);line-height:1.2;margin:6px 0}
+.d{font-size:15px;color:var(--soft)}
+
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start;margin-top:30px}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:3px;background:var(--rule)}
+.tl .prog{position:absolute;left:7px;top:10px;width:3px;background:var(--orange);height:0;transition:height 1.6s ease}
+.tl li{position:relative;padding:0 0 30px 38px}
+.tl li::before{content:"";position:absolute;left:0;top:8px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:3px solid var(--blueT)}
+.tl li.now::before{background:var(--orange);border-color:var(--orange);animation:beat 1.4s ease-in-out infinite}
+.tl .t{font-weight:700;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:clamp(28px,3vw,36px);line-height:1;color:var(--blueT);white-space:nowrap}
+.tl .t small{font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;font-weight:700;color:var(--soft);margin-left:8px}
+.tl h3{margin:8px 0 2px;font-size:19px}
+.tl p{color:var(--soft);font-size:15px}
+.tl .live{display:none;color:var(--orange);font-weight:900;font-size:14px;margin-left:8px}
+.tl li.now .live{display:inline}
+
+.route{border-top:3px solid var(--ink);padding-top:18px}
+.fig{position:relative;height:230px;margin:6px 0 10px}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+.dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 18px;font-size:15px;margin:0}
+.dl dt{font-weight:700;color:var(--soft)}
+.dl dd{margin:0}
+
+.prep{background:light-dark(#f2f5fb,#0f172b)}
+.ph{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:0;margin-top:34px;position:relative}
+.ph::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:var(--rule)}
+.phfill{position:absolute;left:0;top:11px;height:2px;width:0;background:var(--orange);transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.pc{position:relative;padding:0 clamp(16px,2.4vw,32px) 0 0}
+.pc+.pc{padding-left:clamp(16px,2.4vw,32px);border-left:1px solid var(--rule)}
+.pc+.pc .dot{left:clamp(16px,2.4vw,32px)}
+.dot{position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--rule)}
+.pc.done .dot{background:var(--blueT);border-color:var(--blueT)}
+.pc.now .dot{background:var(--orange);border-color:var(--orange);animation:beat 1.4s ease-in-out infinite}
+.phd{padding-top:38px;display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.phd .nm{font-size:14px;font-weight:700;color:var(--soft)}
+.phd .st{font-size:13px;font-weight:700;white-space:nowrap;color:var(--soft)}
+.pc.now .st{color:var(--orange)}
+.pc.done .st{color:var(--blueT)}
+.big{font-size:clamp(26px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:4px 0 16px;white-space:nowrap}
+.it{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:2px 14px;padding:14px 0;border-top:1px solid var(--rule)}
+.it h3{font-size:17px}
+.it .by{font-size:14px;font-weight:700;color:var(--blueT);text-align:right;white-space:nowrap}
+.it p{grid-column:1/3;font-size:15px;color:var(--soft)}
+@media(max-width:760px){.ph{grid-template-columns:minmax(0,1fr)}.ph::before,.phfill{display:none}.pc{padding:0 0 8px 34px!important;border-left:2px solid var(--rule)!important;margin-left:8px}.pc+.pc{padding-left:34px}.dot,.pc+.pc .dot{left:-10px!important;top:0}.phd{padding-top:0}}
+
+.money{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);align-items:end}
+.total{font-weight:700;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:clamp(54px,8vw,96px);line-height:1;color:var(--blueT);margin-top:20px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.total small{font-size:.36em;margin-left:6px}
+.bars{display:grid;gap:22px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:4px 14px}
+.bar b{font-size:17px}
+.bar .amt{font-weight:700;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:22px;white-space:nowrap}
+.track{grid-column:1/3;height:16px;background:var(--rule)}
+.fill{height:100%;width:0;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+.bar small{grid-column:1/3;color:var(--soft);font-size:14px}
+
+.kit{background:var(--blue);color:#fff}
+.kitrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(28px,5vw,72px);align-items:center}
+.kitrow h2{color:#fff}
+.kitrow p{color:#c9d8f6;margin-top:12px}
+.kn{font-weight:700;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:clamp(70px,10vw,120px);line-height:1;color:#fff;margin-top:18px}
+.kn small{font-size:.3em;margin-left:6px;color:#c9d8f6}
+.items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;text-align:center}
+.items svg{width:100%;max-width:120px;height:auto;margin:0 auto;display:block;overflow:visible}
+.items b{display:block;font-family:"Malang","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:22px;font-weight:700;margin-top:8px}
+.items span{color:#c9d8f6}
+.bob{animation:bob 3s ease-in-out infinite}
+.items div:nth-child(2) .bob{animation-delay:.4s}
+.items div:nth-child(3) .bob{animation-delay:.8s}
+.steam{animation:steam 2.4s ease-in-out infinite}
+
+.coop{margin-top:26px;border-top:3px solid var(--ink)}
+.coop div{display:grid;grid-template-columns:10em minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.coop b{color:var(--blueT)}
+
+.tabs{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:12px max(5vw,14px)}
+.tabs .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:720px}
+.tabs button{appearance:none;cursor:pointer;font-family:inherit;text-align:center;min-height:68px;padding:12px 10px;border-radius:12px;border:2px solid var(--blueT);background:var(--bg);color:var(--blueT);font-weight:700;font-size:clamp(18px,2.2vw,22px);line-height:1.2;transition:background .2s,color .2s,transform .15s,box-shadow .2s;box-shadow:0 3px 0 color-mix(in srgb,var(--blueT) 35%,transparent)}
+.tabs button:hover{transform:translateY(-2px);box-shadow:0 5px 0 color-mix(in srgb,var(--blueT) 35%,transparent)}
+.tabs button:active{transform:translateY(1px);box-shadow:0 1px 0 color-mix(in srgb,var(--blueT) 35%,transparent)}
+.tabs button[aria-selected=true]{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:none;transform:none;cursor:default}
+.tabs button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.tabs small{display:block;font-size:13px;font-weight:400;margin-top:4px;opacity:.85}
+.tabs button[aria-selected=false] small::after{content:" 눌러서 보기 ›";font-weight:700;color:var(--orange)}
+.tabs button[aria-selected=false]{animation:nudge 2.4s ease-in-out 1s infinite}
+@keyframes nudge{0%,70%,100%{transform:none}78%{transform:translateY(-3px)}86%{transform:none}92%{transform:translateY(-2px)}}
+.rhead{background:#0b1a3c;color:#fff}
+.rhead h2{color:#fff}
+.rhead p{color:#b9c7e6;margin-top:10px}
+.cmp{width:100%;border-collapse:collapse;margin-top:24px;font-size:16px}
+.cmp th,.cmp td{padding:14px 10px;border-bottom:1px solid var(--rule);text-align:left}
+.cmp th{font-size:14px;color:var(--soft);font-weight:700;border-bottom:2px solid var(--ink)}
+.cmp td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+.cmp td.n.e{color:var(--soft);font-weight:400}
+.gal2{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,minmax(130px,1fr));gap:10px;margin-top:24px;min-height:380px}
+.gal2 div{border:1px dashed var(--rule);display:grid;place-items:center;color:var(--soft);font-size:15px;text-align:center;padding:12px;background:light-dark(#f4f6fb,#101a30)}
+.gal2 div:first-child{grid-row:1/3}
+@media(max-width:560px){.gal2{grid-template-columns:1fr 1fr;grid-template-rows:auto;min-height:0}.gal2 div{aspect-ratio:4/3}.gal2 div:first-child{grid-column:1/3;grid-row:auto}.tabs button{font-size:17px;min-height:60px}}
+.result{background:#0b1a3c;color:#fff}
+.result h2{color:#fff}
+.result .lead{color:#b9c7e6;margin-top:10px}
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,minmax(120px,1fr));gap:10px;margin-top:30px;min-height:360px}
+.gal div{border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;color:#8fa1c9;font-size:15px;text-align:center;padding:12px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 12px,transparent 12px 24px)}
+.gal div:first-child{grid-row:1/3}
+
+.foot{background:var(--blue);color:#c9d8f6;font-size:15px;padding-block:28px}
+.foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot b{color:#fff}
+
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@keyframes up{from{transform:translateY(105%)}}
+@keyframes flow{to{transform:translateX(-50%)}}
+@keyframes ring{50%{transform:scale(1.08);opacity:.6}}
+@keyframes beat{50%{box-shadow:0 0 0 9px rgba(240,90,34,.18)}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@keyframes steam{0%{opacity:0;transform:translateY(4px)}40%{opacity:.9}100%{opacity:0;transform:translateY(-10px)}}
+@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+@media(max-width:860px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.grid4>div:nth-child(2){border-right:0}.two,.money,.kitrow{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.grid4{grid-template-columns:minmax(0,1fr)}.grid4>div{border-right:0;margin-right:0;border-bottom:1px solid var(--rule);padding-bottom:16px}.coop div{grid-template-columns:minmax(0,1fr);gap:2px}.gal{grid-template-columns:1fr 1fr;grid-template-rows:auto;min-height:0}.gal div{aspect-ratio:4/3}.gal div:first-child{grid-column:1/3;grid-row:auto}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<section class="band banner" style="padding-block:clamp(12px,2vw,24px)"><div class="wrap">
+  <img src="banner.jpg" alt="충청남도 중등학교 교사 임용후보자 선정경쟁시험 선·후배님의 합격을 기원합니다 - 국립공주대학교 사범대학 체육교육과 총동문회 현수막">
+</div></section>
+
+<nav class="tabs" aria-label="페이지 구분"><div class="wrap" role="tablist">
+  <button role="tab" id="tb-result" aria-controls="t-result" aria-selected="true">행사 결과<small>사진 · 결과 정리</small></button>
+  <button role="tab" id="tb-plan" aria-controls="t-plan" aria-selected="false">응원 행사 준비<small>안내 · 일정 · 예산</small></button>
+</div></nav>
+
+<div id="t-plan" role="tabpanel" aria-labelledby="tb-plan" hidden>
+<header class="band hero">
+  <svg class="fx" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none">
+      <circle class="orb" cx="80" cy="120" r="300" stroke="#d9b874" stroke-opacity=".28" stroke-dasharray="2 9"/>
+      <circle cx="80" cy="120" r="230" stroke="#fff" stroke-opacity=".07"/>
+      <circle class="orb b" cx="80" cy="120" r="380" stroke="#fff" stroke-opacity=".06" stroke-dasharray="80 30"/>
+      <circle class="orb" cx="1380" cy="440" r="320" stroke="#d9b874" stroke-opacity=".28" stroke-dasharray="2 9"/>
+      <circle cx="1380" cy="440" r="250" stroke="#fff" stroke-opacity=".07"/>
+      <circle class="orb b" cx="1380" cy="440" r="400" stroke="#fff" stroke-opacity=".06" stroke-dasharray="80 30"/>
+    </g>
+  </svg>
+  <div class="emb"><img src="logo.png" alt="국립공주대학교 로고"></div>
+  <p class="org">국립공주대학교 사범대학 체육교육과 총동문회</p>
+  <h1><span class="l1"><b>2026 충청남도 중등교사</b></span><span class="l2"><b>임용시험 1차 응원 행사</b></span></h1>
+  <p class="sub">선·후배님의 합격을 기원합니다</p>
+  <div class="clock">
+    <div><div class="lab">일시</div><div class="val">11월 28일(토) 07:00<small>시험장 정문 집결</small></div></div>
+    <div><div class="lab">장소</div><div class="val">천안오성중학교<small>천안시 서북구 두정고1길 25</small></div></div>
+    <div><div class="lab" id="cdLab">집결까지</div><div class="cd" id="cd">--</div></div>
+  </div>
+</header>
+
+
+
+
+<main>
+<section class="band"><div class="wrap">
+  <h2 class="rv">행사 안내</h2>
+  <div class="grid4 rv" style="margin-top:26px">
+    <div><p class="k">언제</p><p class="v">11. 28.(토) 07:00</p><p class="d">시험장 정문 집결</p></div>
+    <div><p class="k">어디서</p><p class="v">천안오성중학교</p><p class="d">천안시 서북구 두정고1길 25</p></div>
+    <div><p class="k">누구와</p><p class="v">수험생 38명</p><p class="d">충남교사동문회, 교수 3명(김원정·박인규·이민기)</p></div>
+    <div><p class="k">무엇을</p><p class="v">응원과 격려</p><p class="d">격려물품 전달, 기념촬영, 조식</p></div>
+  </div>
+
+  <div class="two">
+    <div class="rv">
+      <h2 style="margin-bottom:28px">행사 일정</h2>
+      <ol class="tl" id="tl">
+        <div class="prog" id="prog"></div>
+        <li data-s="07:00" data-e="07:10"><div class="t">07:00</div><h3>집결, 현수막 설치<span class="live">지금</span></h3><p>천안오성중학교 정문</p></li>
+        <li data-s="07:10" data-e="08:30"><div class="t">07:00<small>~ 08:30</small></div><h3>수험생 응원, 격려물품 전달<span class="live">지금</span></h3><p>핫팩, 보리차, 에너지바를 한 사람씩 건넵니다</p></li>
+        <li data-s="08:30" data-e="08:40"><div class="t">08:30<small>~ 08:40</small></div><h3>현수막 앞 기념촬영<span class="live">지금</span></h3><p>시험장 정문</p></li>
+        <li data-s="08:40" data-e="10:00" style="padding-bottom:0"><div class="t">08:40<small>~</small></div><h3>식당으로 이동해 조식<span class="live">지금</span></h3><p>이순신소국밥, 걸어서 600m</p></li>
+      </ol>
+    </div>
+    <div class="route rv">
+      <h3>시험장에서 식당까지</h3>
+      <p style="color:var(--soft);font-size:15px">걸어서 12분쯤, 차로 2~3분</p>
+      <div class="fig"><svg id="map" role="img" aria-label="천안오성중학교에서 이순신소국밥까지 도보 약 600m"></svg></div>
+      <dl class="dl">
+        <dt>식당</dt><dd>이순신소국밥</dd>
+        <dt>메뉴</dt><dd>소머리국밥, 참석자 전원 50인분</dd>
+        <dt>재학생</dt><dd>각자 이동 (대중교통·자가용)</dd>
+      </dl>
+    </div>
+  </div>
+</div></section>
+
+<section class="band prep"><div class="wrap">
+  <h2 class="rv">추진 경과</h2>
+  <div class="ph rv" id="ph"></div>
+</div></section>
+
+<section class="band"><div class="wrap money">
+  <div class="rv">
+    <h2>필요한 예산</h2>
+    <div class="total"><span id="total" data-v="830000">0</span><small>원</small></div>
+  </div>
+  <div class="bars rv" id="bars"></div>
+</div></section>
+
+<section class="band kit"><div class="wrap kitrow">
+  <div class="rv">
+    <h2>수험생 한 사람에<br>한 세트씩</h2>
+    <p>시험장에 들어가기 전 손에 쥐여 줄 격려물품입니다.</p>
+    <div class="kn">40<small>세트</small></div>
+  </div>
+  <div class="items rv">
+    <div><svg viewBox="0 0 120 130" aria-hidden="true"><g class="bob"><rect x="28" y="14" width="64" height="96" rx="10" fill="#f05a22"/><rect x="28" y="14" width="64" height="20" rx="10" fill="#c9430f"/><path d="M44 62c8-9 24-9 32 0M44 82c8-9 24-9 32 0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/></g><path class="steam" d="M52 6q4-6 0-12M68 6q4-6 0-12" stroke="#ffd2bf" stroke-width="4" fill="none" stroke-linecap="round"/></svg><b>핫팩</b><span>1개</span></div>
+    <div><svg viewBox="0 0 120 130" aria-hidden="true"><g class="bob"><rect x="48" y="6" width="24" height="14" rx="3" fill="#0b9b4b"/><path d="M45 20h30l7 16v78a6 6 0 0 1-6 6H44a6 6 0 0 1-6-6V36z" fill="#dcecf8"/><path d="M38 60h44v34H38z" fill="#c8913c"/><path d="M46 28h9v86h-9z" fill="#fff" opacity=".6"/></g></svg><b>보리차</b><span>1개</span></div>
+    <div><svg viewBox="0 0 120 130" aria-hidden="true"><g class="bob"><g transform="rotate(-14 60 50)"><rect x="12" y="38" width="96" height="26" rx="5" fill="#ffffff"/><rect x="12" y="38" width="14" height="26" rx="4" fill="#c9d8f6"/><rect x="94" y="38" width="14" height="26" rx="4" fill="#c9d8f6"/><rect x="36" y="46" width="44" height="10" rx="2" fill="#f05a22"/></g><g transform="rotate(-14 60 86)"><rect x="12" y="74" width="96" height="26" rx="5" fill="#0b9b4b"/><rect x="12" y="74" width="14" height="26" rx="4" fill="#087a3a"/><rect x="94" y="74" width="14" height="26" rx="4" fill="#087a3a"/><rect x="36" y="82" width="44" height="10" rx="2" fill="#fff"/></g></g></svg><b>에너지바</b><span>2개</span></div>
+  </div>
+</div></section>
+
+
+</main>
+</div>
+
+<div id="t-result" role="tabpanel" aria-labelledby="tb-result">
+<section class="band rhead"><div class="wrap">
+  <h2>행사 결과</h2>
+  <p>2026. 11. 28.(토) 천안오성중학교 · 행사를 마친 뒤 사진과 결과를 정리해 올립니다.</p>
+</div></section>
+<section class="band"><div class="wrap">
+  <h2>계획과 결과</h2>
+  <div class="scroll"><table class="cmp">
+    <thead><tr><th>항목</th><th style="text-align:right">계획</th><th style="text-align:right">결과</th></tr></thead>
+    <tbody>
+      <tr><td>응원 대상 수험생</td><td class="n">38명</td><td class="n e">행사 후 입력</td></tr>
+      <tr><td>격려물품 전달</td><td class="n">40세트</td><td class="n e">행사 후 입력</td></tr>
+      <tr><td>조식 인원</td><td class="n">50명</td><td class="n e">행사 후 입력</td></tr>
+      <tr><td>집행 예산</td><td class="n">830,000원</td><td class="n e">행사 후 입력</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+<section class="band" style="padding-top:0"><div class="wrap">
+  <h2>현장 사진</h2>
+  <div class="gal2"><div>현수막 앞 단체 사진</div><div>정문 응원</div><div>격려물품 전달</div><div>교수님과 함께</div><div>조식</div></div>
+</div></section>
+</div>
+
+<footer class="foot"><div class="wrap" style="padding-inline:max(5vw,18px)">
+  <span><b>국립공주대학교 사범대학 체육교육과 총동문회</b></span><span>문의 조영욱</span>
+</div></footer>
+
+<script>
+{
+  const $=id=>document.getElementById(id);
+  const fmt=n=>n.toLocaleString("ko-KR");
+  const KST=9*3600e3;
+  const at=(hm,day)=>new Date(`2026-11-${day||28}T${hm}:00+09:00`).getTime();
+
+
+  const phases=[
+    {nm:"사전 준비",big:"11. 25. ~ 27.",from:at("00:00",25),to:at("00:00",28),items:[
+      {t:"업무계획 수립",p:"일정, 예산, 협조 사항 정리",by:"체육교육과"},
+      {t:"현수막 제작",p:"합격 기원 현수막 1장",by:"충남교사동문회"},
+      {t:"경비 사전 안내·동의",p:"충남 모임 단톡방 안내, 응원 참석 안내",by:"조영욱"},
+      {t:"격려물품 40세트",p:"핫팩 1, 보리차 1, 에너지바 2",by:"총동문회"}]},
+    {nm:"행사 당일",big:"11. 28.(토)",from:at("00:00",28),to:at("00:00",29),items:[
+      {t:"응원 행사",p:"07:00 집결, 응원과 물품 전달, 기념촬영, 조식",by:"참석 동문"}]},
+    {nm:"후속",big:"12. 3.(목)",from:new Date("2026-12-03T00:00:00+09:00").getTime(),to:new Date("2026-12-04T00:00:00+09:00").getTime(),items:[
+      {t:"격려금 전달식",p:"16:00, 이은상 회장님 전달, 최정용 님 수행",by:"총동문회"}]}
+  ];
+  const nowT=Date.now();
+  let reached=0;
+  $("ph").innerHTML='<div class="phfill" id="phfill"></div>'+phases.map((p,i)=>{
+    const st=nowT>=p.to?"done":nowT>=p.from?"now":"";
+    if(nowT>=p.from)reached=i+1;
+    const lab=st==="done"?"완료":st==="now"?"진행 중":"예정";
+    return `<div class="pc ${st}"><span class="dot"></span><div class="phd"><span class="nm">${p.nm}</span><span class="st">${lab}</span></div><div class="big">${p.big}</div>${p.items.map(x=>`<div class="it"><h3>${x.t}</h3><span class="by">${x.by}</span><p>${x.p}</p></div>`).join("")}</div>`}).join("");
+  const phW=[0,30,65,100][reached];
+  const phEl=$("ph");
+
+  const budget=[
+    {k:"식비",d:"소머리국밥 11,000원 × 50명 · 총동문회비",v:550000,c:"var(--blueT)"},
+    {k:"격려물품",d:"5,000원 × 40세트",v:200000,c:"var(--greenT)"},
+    {k:"현수막",d:"80,000원 × 1장 · 충남교사동문회",v:80000,c:"var(--orange)"}
+  ];
+  const max=Math.max(...budget.map(b=>b.v));
+  $("bars").innerHTML=budget.map(b=>`<div class="bar"><b>${b.k}</b><span class="amt">${fmt(b.v)}원</span><div class="track"><div class="fill" data-w="${b.v/max*100}" style="background:${b.c}"></div></div><small>${b.d}</small></div>`).join("");
+
+  const count=el=>{const v=+el.dataset.v,t0=performance.now();const f=t=>{const k=Math.min(1,(t-t0)/1400);el.textContent=fmt(Math.round(v*(1-(1-k)**3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const show=el=>{el.classList.add("in");if(el.id==="ph")$("phfill").style.width=phW+"%";el.querySelectorAll(".fill").forEach(f=>f.style.width=f.dataset.w+"%");const t=el.querySelector("#total");if(t&&!t.dataset.done){t.dataset.done=1;reduce?t.textContent=fmt(+t.dataset.v):count(t)}};
+  const els=[...document.querySelectorAll(".rv")];
+  if("IntersectionObserver" in window&&!reduce){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}}),{threshold:.15});
+    els.forEach(el=>io.observe(el));
+    setTimeout(()=>els.forEach(show),6000);
+  }else els.forEach(show);
+
+  const pad=n=>String(n).padStart(2,"0");
+  const lis=[...document.querySelectorAll("#tl li")];
+  const tick=()=>{
+    const now=Date.now(),gap=at("07:00")-now;
+    if(gap>0){
+      const s=Math.floor(gap/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;
+      $("cd").innerHTML=(d?`${d}<small>일</small>`:"")+`${pad(h)}<small>시간</small>${pad(m)}<small>분</small>${pad(x)}<small>초</small>`;
+    }else if(now<at("10:00")){$("cdLab").textContent="지금";$("cd").textContent="응원 중"}
+    else{$("cdLab").textContent="행사";$("cd").textContent="응원 완료"}
+    let done=0;
+    lis.forEach((li,i)=>{const s=at(li.dataset.s),e=at(li.dataset.e);li.classList.toggle("now",now>=s&&now<e);if(now>=s)done=i+1});
+    const tl=$("tl"),last=lis[Math.max(0,done-1)];
+    $("prog").style.height=done?Math.min(tl.clientHeight-20,last.offsetTop+(now>=at("10:00")?last.offsetHeight-20:10))+"px":"0";
+  };
+  tick();setInterval(tick,1000);
+
+  const s=$("map");
+  const draw=()=>{
+    const W=s.clientWidth,H=s.clientHeight,nar=W<380;
+    const x1=W*.15,x2=W*.85,y1=H*.66,y2=H*.32,cx=(x1+x2)/2;
+    const p=`M${x1},${y1} C${cx},${y1} ${cx},${y2} ${x2},${y2}`;
+    s.innerHTML=`<path d="${p}" fill="none" stroke="var(--rule)" stroke-width="14" stroke-linecap="round"/>
+      <path d="${p}" fill="none" stroke="var(--blueT)" stroke-width="4" stroke-dasharray="2 11" stroke-linecap="round"/>
+      <circle r="8" fill="var(--orange)"><animateMotion dur="4.5s" repeatCount="indefinite" path="${p}" keyPoints="0;1;1" keyTimes="0;.8;1" calcMode="linear"/></circle>
+      <g transform="translate(${x1},${y1})"><circle r="22" fill="var(--blue)"/><path d="M-10,7v-10l10-8l10,8v10z" fill="#fff"/></g>
+      <text x="${x1}" y="${y1+44}" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">${nar?"오성중":"천안오성중학교"}</text>
+      <g transform="translate(${x2},${y2})"><circle r="22" fill="var(--orange)"/><path d="M-10,-3h20a10,10 0 0 1-20,0zM-12,-6h24" fill="#fff" stroke="#fff" stroke-width="2" stroke-linecap="round"/></g>
+      <text x="${x2}" y="${y2-34}" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">${nar?"소국밥":"이순신소국밥"}</text>
+      <text x="${cx}" y="${(y1+y2)/2+46}" text-anchor="middle" font-size="16" font-weight="900" fill="var(--blueT)">약 600m</text>`;
+  };
+  const ro=new ResizeObserver(draw);ro.observe(s);
+  const tabs={plan:$("tb-plan"),result:$("tb-result")};
+  const go=(k,push)=>{
+    for(const n in tabs){const on=n===k;tabs[n].setAttribute("aria-selected",on);$("t-"+n).hidden=!on}
+    if(push){try{history.replaceState(null,"",k==="plan"?"#plan":location.pathname+location.search)}catch(e){location.hash=k==="plan"?"plan":""}}
+    document.querySelectorAll("#t-"+k+" .rv").forEach(show);
+    const r=ro&&$("map");if(r)draw();
+  };
+  tabs.plan.addEventListener("click",()=>{go("plan",1);window.scrollTo({top:0});requestAnimationFrame(draw)});
+  tabs.result.addEventListener("click",()=>{go("result",1);window.scrollTo({top:0})});
+  window.addEventListener("hashchange",()=>go(location.hash==="#plan"?"plan":"result"));
+  go(location.hash==="#plan"?"plan":"result");
+}
+</script>
+</body>
+</html>
