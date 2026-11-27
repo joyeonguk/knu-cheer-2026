@@ -300,6 +300,44 @@ h3{font-size:16px}
 .kitpic figcaption span{padding:4px 8px;font-size:12px}
 .tabs button{font-size:15px}
 }
+.rcover{position:relative;background:#0b1a3c;overflow:hidden}
+.rcover img{width:100%;height:auto;max-height:640px;object-fit:cover;object-position:50% 70%;display:block}
+.rcap{padding:clamp(24px,3.4vw,44px) max(5vw,16px) 0;background:#0b1a3c;color:#fff}
+.rcap .wrap{max-width:1160px}
+.rdate{font-size:15px;color:#ffc2b0;font-weight:700;margin:0 0 8px}
+.rcap h2{color:#fff;font-size:clamp(32px,5.4vw,60px);line-height:1.12;letter-spacing:-.03em}
+.rstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2);margin-bottom:30px}
+.rstats>div{padding:18px 12px;text-align:center}
+.rstats>div+div{border-left:1px solid rgba(255,255,255,.14)}
+.rstats b{display:block;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+.rstats b small{font-size:.45em;margin-left:3px;color:#ffc2b0}
+.rstats span{display:block;font-size:14px;color:#b9c7e6;margin-top:6px}
+.rstats>div:first-child b{color:#ff8a6b}
+.rtitle{color:#fff;font-size:20px;margin:0 0 4px}
+.gal3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.gal3 figure{margin:0}
+.gal3 figure.w{grid-column:1/-1}
+.gal3 button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px;overflow:hidden}
+.gal3 img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
+.gal3 figure.w img{aspect-ratio:16/9;object-position:50% 62%}
+.gal3 button:hover img{transform:scale(1.03)}
+.gal3 button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.gal3 figcaption{font-size:14px;color:var(--soft);margin-top:8px}
+.gtip{font-size:13px;color:var(--soft);margin-top:12px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,10,25,.92);display:grid;place-items:center;padding:16px}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:88vh;border-radius:8px}
+.lbx{position:absolute;top:12px;right:14px;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:30px;line-height:1;cursor:pointer}
+@media(max-width:760px){.gal3{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.rstats{grid-template-columns:repeat(2,minmax(0,1fr))}.rstats>div:nth-child(3){border-left:0}.rstats>div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14)}}
+@media(max-width:600px){.rcap{padding:22px 16px 0}.rdate{font-size:12.5px}.rcap h2{font-size:30px}.rstats b{font-size:26px}.rstats span{font-size:12.5px}.rstats>div{padding:14px 6px}.rtitle{font-size:17px}.gal3 figcaption{font-size:12.5px;margin-top:5px}.gal3 figure.w img{aspect-ratio:4/3}}
+.lb{grid-template-rows:1fr auto;gap:14px}
+.lb img{align-self:center;justify-self:center}
+.lbsave{justify-self:center;min-height:50px;padding:12px 28px;border-radius:999px;border:0;background:#fff;color:#0b1a3c;font:700 16px/1 inherit;font-family:inherit;cursor:pointer;margin-bottom:max(8px,env(safe-area-inset-bottom,0px))}
+.lbsave:active{transform:translateY(1px)}
+.gall{margin-top:14px}
+.gall button{min-height:50px;padding:12px 24px;border-radius:12px;border:2px solid var(--blueT);background:var(--bg);color:var(--blueT);font:700 16px/1 inherit;font-family:inherit;cursor:pointer;width:100%;max-width:360px}
+.gall button:hover{background:var(--blueT);color:#fff}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;background:#0b1a3c;color:#fff;padding:12px 20px;border-radius:999px;font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
 </style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -403,16 +441,36 @@ h3{font-size:16px}
 </div>
 
 <div id="t-result" role="tabpanel" aria-labelledby="tb-result" hidden>
+<section class="rcover">
+  <img src="photos/group.jpg" alt="천안오성중학교 정문 앞에서 현수막을 들고 함께 선 응원 인원 단체 사진">
+  <div class="rcap"><div class="wrap">
+    <p class="rdate">2026. 11. 28.(토) · 천안오성중학교 제5시험장</p>
+    <h2>시험장 앞이<br class="m"> 붉게 물들었다</h2>
+  </div></div>
+</section>
 <section class="band rhead"><div class="wrap">
-  <h2>행사 총평</h2>
-  <p>2026. 11. 28.(토) 천안오성중학교</p>
-  <p>이른 아침 추운 날씨에도 시험장 앞을 함께 지켜 주신 모든 동문 선생님과 교수님께 진심으로 감사드립니다. 기꺼이 시간을 내어 참석해 주신 덕분에 후배 수험생들이 든든한 응원 속에서 시험장에 들어설 수 있었습니다.</p>
-  <p>한 해 동안 묵묵히 준비해 온 후배들에게 오늘의 응원이 작은 힘이 되었기를 바랍니다. 수험생 여러분 모두 그동안 정말 수고 많으셨고, 좋은 결과로 교단에서 다시 만나기를 기대합니다.</p>
-  <p>바쁘신 가운데 참석해 주셔서 감사합니다. 아래에 현장 사진과 결과를 정리해 올립니다.</p>
+  <div class="rstats">
+    <div><b>48<small>명</small></b><span>응원 인원</span></div>
+    <div><b>30<small>개</small></b><span>격려물품 전달</span></div>
+    <div><b>23<small>명</small></b><span>조식 참석</span></div>
+    <div><b>463,000<small>원</small></b><span>집행 예산</span></div>
+  </div>
+  <h3 class="rtitle">행사 총평</h3>
+  <p>해가 뜨기 전 어둑한 새벽, 체육교육과 붉은 과잠을 입은 재학생과 동문 선생님, 교수님 48명이 천안오성중학교 정문 앞에 모였습니다. 현수막을 펼치고 줄지어 선 순간, 시험장 앞은 공주대 체육교육과의 붉은색으로 물들었습니다.</p>
+  <p>시험장으로 들어서는 수험생 한 사람 한 사람에게 박수와 함께 격려물품 30개를 건넸고, 입실이 끝난 뒤에는 현수막 앞에서 다 함께 주먹을 쥐고 합격을 빌었습니다. 이어진 아침 식사 자리에서는 23명이 따뜻한 국밥을 나누며 서로의 안부와 응원의 마음을 전했습니다.</p>
+  <p>이른 아침 추운 날씨에도 시험장 앞을 함께 지켜 주신 모든 동문 선생님과 교수님, 재학생 여러분께 진심으로 감사드립니다. 한 해 동안 묵묵히 준비해 온 수험생 여러분 모두 정말 수고 많으셨습니다. 머지않아 교단에서 다시 만나기를 기대합니다.</p>
 </div></section>
 <section class="band"><div class="wrap">
   <h2>현장 사진</h2>
-  <div class="gal2"><div>현수막 앞 단체 사진</div><div>정문 응원</div><div>격려물품 전달</div><div>교수님과 함께</div><div>조식</div></div>
+  <div class="gal3">
+    <figure class="w"><button type="button" data-src="photos/group.jpg"><img src="photos/group.jpg" alt="정문 앞 단체 사진" loading="lazy"></button><figcaption>현수막 앞 단체 사진</figcaption></figure>
+    <figure><button type="button" data-src="photos/dawn.jpg"><img src="photos/dawn.jpg" alt="새벽에 펼친 필승 현수막" loading="lazy"></button><figcaption>새벽, 현수막을 펼치며</figcaption></figure>
+    <figure><button type="button" data-src="photos/gate.jpg"><img src="photos/gate.jpg" alt="시험장 정문 앞 응원 모습" loading="lazy"></button><figcaption>정문 앞 응원</figcaption></figure>
+    <figure><button type="button" data-src="photos/meal1.jpg"><img src="photos/meal1.jpg" alt="조식 자리에서 격려 말씀을 나누는 모습" loading="lazy"></button><figcaption>조식, 격려의 말씀</figcaption></figure>
+    <figure><button type="button" data-src="photos/meal2.jpg"><img src="photos/meal2.jpg" alt="국밥을 함께 나누는 조식 자리" loading="lazy"></button><figcaption>따뜻한 국밥 한 그릇</figcaption></figure>
+  </div>
+  <p class="gtip">사진을 누르면 크게 보고, <b>사진 저장하기</b>로 휴대폰 갤러리에 저장할 수 있어요.</p>
+  <div class="gall"><button type="button" id="saveAll">사진 전체 저장하기 (5장)</button></div>
 </div></section>
 <section class="band" style="padding-top:0"><div class="wrap">
   <h2>계획과 결과</h2>
@@ -420,26 +478,25 @@ h3{font-size:16px}
     <thead><tr><th>항목</th><th style="text-align:right">결과</th><th>비고</th></tr></thead>
     <tbody>
       <tr class="grp"><th colspan="3" scope="rowgroup">참석</th></tr>
-      <tr><td>참석 재학생<span class="sub">체육교육과 재학생</span></td><td class="n e">행사 후 입력</td><td class="note">체육교육과 재학생</td></tr>
-      <tr><td>참석 동문<span class="sub">현장 참석 인원 집계</span></td><td class="n e">행사 후 입력</td><td class="note">현장 참석 인원 집계</td></tr>
-      <tr><td>참석 교수<span class="sub">김원정·박인규·이민기 교수님</span></td><td class="n e">행사 후 입력</td><td class="note">김원정·박인규·이민기 교수님</td></tr>
+      <tr><td>응원 인원<span class="sub">재학생·동문·교수님 포함 전체</span></td><td class="n">48명</td><td class="note">재학생·동문·교수님 포함 전체</td></tr>
       <tr class="grp"><th colspan="3" scope="rowgroup">응원 활동</th></tr>
-      <tr><td>집결·현수막 설치<span class="sub">천안오성중학교 정문</span></td><td class="n e">행사 후 입력</td><td class="note">천안오성중학교 정문</td></tr>
-      <tr><td>수험생 응원<span class="sub">입실 시간에 맞춰 정문 응원</span></td><td class="n e">행사 후 입력</td><td class="note">입실 시간에 맞춰 정문 응원</td></tr>
-      <tr><td>격려물품 전달<span class="sub">핫팩 1, 보리차 1, 에너지바 2</span></td><td class="n e">행사 후 입력</td><td class="note">핫팩 1, 보리차 1, 에너지바 2</td></tr>
-      <tr><td>현수막 앞 기념촬영<span class="sub">수험생 입실 후 참석자 단체 사진</span></td><td class="n e">행사 후 입력</td><td class="note">수험생 입실 후 참석자 단체 사진</td></tr>
+      <tr><td>집결·현수막 설치<span class="sub">천안오성중학교 정문, 07:00</span></td><td class="n">완료</td><td class="note">천안오성중학교 정문, 07:00</td></tr>
+      <tr><td>수험생 응원<span class="sub">입실 시간에 맞춰 정문 응원</span></td><td class="n">완료</td><td class="note">입실 시간에 맞춰 정문 응원</td></tr>
+      <tr><td>격려물품 전달<span class="sub">핫팩·음료·에너지바를 한 봉투에</span></td><td class="n">30개</td><td class="note">핫팩·음료·에너지바를 한 봉투에</td></tr>
+      <tr><td>현수막 앞 기념촬영<span class="sub">응원 인원 단체 사진</span></td><td class="n">완료</td><td class="note">응원 인원 단체 사진</td></tr>
       <tr class="grp"><th colspan="3" scope="rowgroup">조식</th></tr>
-      <tr><td>조식 인원<span class="sub">이순신소국밥, 소머리국밥</span></td><td class="n e">행사 후 입력</td><td class="note">이순신소국밥, 소머리국밥</td></tr>
+      <tr><td>조식 인원<span class="sub">이순신소국밥, 소머리국밥</span></td><td class="n">23명</td><td class="note">이순신소국밥, 소머리국밥</td></tr>
       <tr class="grp"><th colspan="3" scope="rowgroup">예산</th></tr>
-      <tr><td>식비<span class="sub">11,000원 × 50명 · 총동문회비</span></td><td class="n e">행사 후 입력</td><td class="note">11,000원 × 50명 · 총동문회비</td></tr>
-      <tr><td>격려물품<span class="sub">5,000원 × 30세트</span></td><td class="n e">행사 후 입력</td><td class="note">5,000원 × 30세트</td></tr>
-      <tr><td>현수막<span class="sub">80,000원 × 1장 · 충남교사동문회</span></td><td class="n e">행사 후 입력</td><td class="note">80,000원 × 1장 · 충남교사동문회</td></tr>
-      <tr class="sum"><td>합계</td><td class="n e">행사 후 입력</td><td class="note"></td></tr>
+      <tr><td>식비<span class="sub">11,000원 × 23명 · 총동문회비</span></td><td class="n">253,000원</td><td class="note">11,000원 × 23명 · 총동문회비</td></tr>
+      <tr><td>격려물품<span class="sub">30개</span></td><td class="n">130,000원</td><td class="note">30개</td></tr>
+      <tr><td>현수막<span class="sub">1장 · 충남교사동문회</span></td><td class="n">80,000원</td><td class="note">1장 · 충남교사동문회</td></tr>
+      <tr class="sum"><td>합계</td><td class="n">463,000원</td><td class="note"></td></tr>
       <tr class="grp"><th colspan="3" scope="rowgroup">후속</th></tr>
-      <tr><td>격려금 전달식<span class="sub">2026. 12. 3.(목) 16:00 · 이은상 회장님 전달, 최정용 님 수행</span></td><td class="n e">행사 후 입력</td><td class="note">2026. 12. 3.(목) 16:00 · 이은상 회장님 전달, 최정용 님 수행</td></tr>
+      <tr><td>격려금 전달식<span class="sub">2026. 12. 3.(목) 16:00 · 이은상 회장님 전달, 최정용 님 수행</span></td><td class="n e">예정</td><td class="note">2026. 12. 3.(목) 16:00 · 이은상 회장님 전달, 최정용 님 수행</td></tr>
     </tbody>
   </table></div>
 </div></section>
+<div class="lb" id="lb" hidden><button type="button" class="lbx" aria-label="닫기">×</button><img alt=""><button type="button" class="lbsave" id="lbsave">사진 저장하기</button></div>
 </div>
 
 <footer class="foot"><div class="wrap" style="padding-inline:max(5vw,18px)">
@@ -531,14 +588,34 @@ h3{font-size:16px}
   const tabs={plan:$("tb-plan"),result:$("tb-result")};
   const go=(k,push)=>{
     for(const n in tabs){const on=n===k;tabs[n].setAttribute("aria-selected",on);$("t-"+n).hidden=!on}
-    if(push){try{history.replaceState(null,"",k==="result"?"#result":location.pathname+location.search)}catch(e){location.hash=k==="result"?"result":""}}
+    if(push){try{history.replaceState(null,"",k==="plan"?"#plan":location.pathname+location.search)}catch(e){location.hash=k==="plan"?"plan":""}}
     document.querySelectorAll("#t-"+k+" .rv").forEach(show);
     const r=ro&&$("map");if(r)draw();
   };
   tabs.plan.addEventListener("click",()=>{go("plan",1);window.scrollTo({top:0});requestAnimationFrame(draw)});
   tabs.result.addEventListener("click",()=>{go("result",1);window.scrollTo({top:0})});
-  window.addEventListener("hashchange",()=>go(location.hash==="#result"?"result":"plan"));
-  go(location.hash==="#result"?"result":"plan");
+  const defTab=location.hash==="#plan"?"plan":"result";
+  window.addEventListener("hashchange",()=>go(location.hash==="#plan"?"plan":"result"));
+  go(defTab);
+
+  const lb=$("lb");
+  if(lb){const li=lb.querySelector("img");
+    document.querySelectorAll(".gal3 button").forEach(b=>b.addEventListener("click",()=>{li.src=b.dataset.src;li.alt=b.querySelector("img").alt;lb.hidden=false}));
+    lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lbx"))lb.hidden=true});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.hidden=true});}
+
+  const toast=m=>{const t=document.createElement("div");t.className="toast";t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2600)};
+  const getFile=async src=>{const r=await fetch(src);const b=await r.blob();return new File([b],"공주대체교과_임용응원_"+src.split("/").pop(),{type:b.type||"image/jpeg"})};
+  const dl=f=>{const u=URL.createObjectURL(f);const a=document.createElement("a");a.href=u;a.download=f.name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)};
+  const saveImgs=async srcs=>{
+    try{
+      const files=await Promise.all(srcs.map(getFile));
+      if(navigator.canShare&&navigator.canShare({files})){await navigator.share({files});return}
+      files.forEach((f,i)=>setTimeout(()=>dl(f),i*400));toast("사진을 내려받았어요");
+    }catch(e){if(e&&e.name==="AbortError")return;toast("길게 눌러 '사진에 저장'을 눌러 주세요")}
+  };
+  const lbs=$("lbsave");if(lbs)lbs.addEventListener("click",e=>{e.stopPropagation();saveImgs([lb.querySelector("img").getAttribute("src")])});
+  const sa=$("saveAll");if(sa)sa.addEventListener("click",()=>saveImgs([...document.querySelectorAll(".gal3 button")].map(b=>b.dataset.src)));
 }
 </script>
 </body>
