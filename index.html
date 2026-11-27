@@ -30,32 +30,41 @@ p{margin:0}
 .wrap{max-width:1160px;margin:0 auto}
 .band{padding-block:clamp(44px,6vw,88px);padding-left:max(5vw,18px,env(safe-area-inset-left,0px));padding-right:max(5vw,18px,env(safe-area-inset-right,0px))}
 
-.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding-top:clamp(40px,5vw,64px);padding-bottom:0;background:radial-gradient(ellipse 60% 80% at 50% 30%,#18397f 0%,#0d2250 55%,#081736 100%)}
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding-top:clamp(44px,6vw,80px);padding-bottom:clamp(36px,5vw,60px);background:linear-gradient(180deg,#0a1a3e 0%,#0c2152 55%,#081634 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 50% 0%,rgba(217,184,116,.16),transparent 70%),radial-gradient(ellipse 40% 50% at 50% 100%,rgba(70,120,220,.18),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000,transparent 85%);mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,#000,transparent 85%);pointer-events:none}
 .hero>*{position:relative;z-index:1}
 .hero .fx{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
-.orb{transform-box:fill-box;transform-origin:center;animation:turn 60s linear infinite}
-.orb.b{animation-direction:reverse;animation-duration:80s}
-.emb{width:clamp(68px,7vw,84px);height:clamp(68px,7vw,84px);margin:0 auto;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.14);animation:fade .8s ease both}
+.orb{transform-box:fill-box;transform-origin:center;animation:turn 90s linear infinite}
+.orb.b{animation-direction:reverse;animation-duration:120s}
+.brand{display:inline-flex;align-items:center;gap:12px;padding:6px 18px 6px 6px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.04);animation:fade .8s ease both}
+.emb{width:40px;height:40px;border-radius:50%;background:#fff;flex:none}
 .emb img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.org{margin-top:12px;font-size:15px;font-weight:700;color:#b8c8ea;animation:fade .8s .1s ease both}
-.hero h1{margin:clamp(18px,2.4vw,26px) 0 0;line-height:1.12;letter-spacing:-.03em}
+.org{font-size:14px;font-weight:500;color:#cfdaf1;letter-spacing:.01em}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:clamp(28px,3.4vw,40px);font-size:clamp(14px,1.5vw,16px);font-weight:700;letter-spacing:.18em;color:#d9b874;animation:fade .8s .1s ease both}
+.eyebrow::before,.eyebrow::after{content:"";width:clamp(28px,6vw,64px);height:1px;background:linear-gradient(90deg,transparent,#d9b874)}
+.eyebrow::after{transform:scaleX(-1)}
+.hero h1{margin:clamp(12px,1.6vw,18px) 0 0;line-height:1.1;letter-spacing:-.035em}
 .hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
 .hero h1 span>b{display:inline-block;font-weight:700;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
-.l1{font-size:clamp(19px,2.4vw,26px);color:#d9b874}
-.l2{font-size:clamp(36px,6vw,68px);color:#fff}
-.l2>b{animation-delay:.1s!important}
-.sub{margin-top:14px;font-size:clamp(16px,1.8vw,19px);color:#dfe7f7;animation:fade .8s .4s ease both}
-.clock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:900px;margin:clamp(28px,4vw,44px) auto 0;border-top:1px solid rgba(217,184,116,.45);animation:fade .8s .6s ease both}
-.clock>div{padding:16px 12px 22px}
-.clock>div+div{border-left:1px solid rgba(255,255,255,.12)}
-.clock .lab{font-size:13px;font-weight:700;color:#d9b874}
-.clock .val{font-size:clamp(16px,1.8vw,19px);font-weight:700;margin-top:2px}
-.clock .val small{display:block;font-size:13px;font-weight:400;color:#a9b9da}
-.cd{font-weight:700;font-size:clamp(20px,2.4vw,26px);line-height:1.25;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.cd small{font-size:.5em;color:#a9b9da;margin:0 5px 0 2px;font-weight:400}
+.l1{font-size:clamp(40px,6.6vw,76px);color:#fff}
+.l2{font-size:clamp(40px,6.6vw,76px)}
+.l2>b{color:#e6cf98;background:linear-gradient(180deg,#f6e7c1 10%,#d2ae64 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation-delay:.1s!important}
+.rule{display:flex;align-items:center;justify-content:center;gap:10px;margin:clamp(18px,2.4vw,26px) auto 0;animation:fade .8s .3s ease both}
+.rule i{width:clamp(40px,8vw,90px);height:1px;background:rgba(255,255,255,.25)}
+.rule b{width:7px;height:7px;transform:rotate(45deg);background:#d9b874}
+.sub{margin-top:clamp(14px,1.8vw,20px);font-size:clamp(17px,2vw,22px);font-weight:500;color:#e6ecf8;letter-spacing:.02em;animation:fade .8s .4s ease both}
+.clock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:920px;margin:clamp(32px,4.4vw,52px) auto 0;animation:fade .8s .6s ease both}
+.clock>div{padding:18px 16px 20px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.clock>div:last-child{border-color:rgba(217,184,116,.45);background:linear-gradient(180deg,rgba(217,184,116,.14),rgba(217,184,116,.03))}
+.clock .lab{font-size:12px;font-weight:700;letter-spacing:.14em;color:#d9b874}
+.clock .val{font-size:clamp(17px,1.9vw,20px);font-weight:700;margin-top:4px}
+.clock .val small{display:block;font-size:13px;font-weight:400;color:#a9b9da;margin-top:2px}
+.cd{font-weight:700;font-size:clamp(22px,2.6vw,28px);line-height:1.25;margin-top:4px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cd small{font-size:.48em;color:#c9b585;margin:0 6px 0 2px;font-weight:400}
 @keyframes turn{to{transform:rotate(360deg)}}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}}
-@media(max-width:700px){.clock{grid-template-columns:minmax(0,1fr)}.clock>div{padding:12px 0}.clock>div+div{border-left:0;border-top:1px solid rgba(255,255,255,.1)}}
+@media(max-width:700px){.clock{grid-template-columns:minmax(0,1fr);gap:8px}.clock>div{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:right}.clock .lab{text-align:left}.clock .val,.cd{margin-top:0}.org{font-size:13px}}
 
 
 .banner{padding-block:clamp(28px,4vw,48px)}
@@ -217,17 +226,16 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:5px;font-family:"Malan
 <header class="band hero">
   <svg class="fx" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <g fill="none">
-      <circle class="orb" cx="80" cy="120" r="300" stroke="#d9b874" stroke-opacity=".28" stroke-dasharray="2 9"/>
-      <circle cx="80" cy="120" r="230" stroke="#fff" stroke-opacity=".07"/>
-      <circle class="orb b" cx="80" cy="120" r="380" stroke="#fff" stroke-opacity=".06" stroke-dasharray="80 30"/>
-      <circle class="orb" cx="1380" cy="440" r="320" stroke="#d9b874" stroke-opacity=".28" stroke-dasharray="2 9"/>
-      <circle cx="1380" cy="440" r="250" stroke="#fff" stroke-opacity=".07"/>
-      <circle class="orb b" cx="1380" cy="440" r="400" stroke="#fff" stroke-opacity=".06" stroke-dasharray="80 30"/>
+      <circle class="orb" cx="40" cy="80" r="340" stroke="#d9b874" stroke-opacity=".16" stroke-dasharray="1 10"/>
+      <circle cx="40" cy="80" r="260" stroke="#fff" stroke-opacity=".05"/>
+      <circle class="orb" cx="1400" cy="460" r="360" stroke="#d9b874" stroke-opacity=".16" stroke-dasharray="1 10"/>
+      <circle cx="1400" cy="460" r="280" stroke="#fff" stroke-opacity=".05"/>
     </g>
   </svg>
-  <div class="emb"><img src="logo.png" alt="국립공주대학교 로고"></div>
-  <p class="org">국립공주대학교 사범대학 체육교육과 총동문회</p>
-  <h1><span class="l1"><b>2026 충청남도 중등교사</b></span><span class="l2"><b>임용시험 1차 응원 행사</b></span></h1>
+  <div class="brand"><span class="emb"><img src="logo.png" alt="국립공주대학교 로고"></span><span class="org">국립공주대학교 사범대학 체육교육과 총동문회</span></div>
+  <p class="eyebrow">2026 충청남도 중등교사</p>
+  <h1><span class="l1"><b>임용시험 1차</b></span><span class="l2"><b>응원 행사</b></span></h1>
+  <div class="rule" aria-hidden="true"><i></i><b></b><i></i></div>
   <p class="sub">선·후배님의 합격을 기원합니다</p>
   <div class="clock">
     <div><div class="lab">일시</div><div class="val">11월 28일(토) 07:00<small>시험장 정문 집결</small></div></div>
