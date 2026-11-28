@@ -322,7 +322,7 @@ h3{font-size:16px}
 .rstats span{display:block;font-size:14px;color:#b9c7e6;margin-top:6px}
 .rstats>div:first-child b{color:#ff8a6b}
 .rtitle{color:#fff;font-size:20px;margin:0 0 4px}
-.gal3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.gal3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
 .gal3 figure{margin:0}
 .gal3 figure.w{grid-column:1/-1}
 .gal3 button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px;overflow:hidden}
@@ -336,7 +336,7 @@ h3{font-size:16px}
 .lb[hidden]{display:none}
 .lb img{max-width:100%;max-height:88vh;border-radius:8px}
 .lbx{position:absolute;top:12px;right:14px;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:30px;line-height:1;cursor:pointer}
-@media(max-width:760px){.gal3{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.rstats{grid-template-columns:repeat(2,minmax(0,1fr))}.rstats>div:nth-child(3){border-left:0}.rstats>div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14)}}
+@media(max-width:760px){.gal3{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.gal3 figure:last-child{grid-column:1/-1}.gal3 figure:last-child img{aspect-ratio:16/9}.rstats{grid-template-columns:repeat(2,minmax(0,1fr))}.rstats>div:nth-child(3){border-left:0}.rstats>div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14)}}
 @media(max-width:600px){.rcap{padding:22px 16px 0}.rdate{font-size:12.5px}.rcap h2{font-size:30px}.rstats b{font-size:26px}.rstats span{font-size:12.5px}.rstats>div{padding:14px 6px}.rtitle{font-size:17px}.gal3 figcaption{font-size:12.5px;margin-top:5px}.gal3 figure.w img{aspect-ratio:4/3}}
 .lb{grid-template-rows:1fr auto;gap:14px}
 .lb img{align-self:center;justify-self:center}
@@ -469,12 +469,13 @@ h3{font-size:16px}
 <section class="band"><div class="wrap">
   <h2>현장 사진</h2>
   <div class="gal3">
-    <figure class="w"><button type="button" data-src="photos/group.jpg"><img src="photos/group.jpg" alt="정문 앞 단체 사진" loading="lazy"></button><figcaption>현수막 앞 단체 사진</figcaption></figure>
-    <figure><button type="button" data-src="photos/gate.jpg"><img src="photos/gate.jpg" alt="시험장 정문 앞 응원 모습" loading="lazy"></button><figcaption>정문 앞 응원</figcaption></figure>
+    <figure class="w"><button type="button" data-src="photos/group.jpg"><img src="photos/group.jpg" alt="정문 앞 단체 사진" loading="lazy"></button><figcaption>단체 사진</figcaption></figure>
+    <figure><button type="button" data-src="photos/dawn.jpg"><img src="photos/dawn.jpg" alt="정문 옆에 설치한 합격 기원 현수막" loading="lazy"></button><figcaption>현수막 설치</figcaption></figure>
+    <figure><button type="button" data-src="photos/gate.jpg"><img src="photos/gate.jpg" alt="시험장 정문 앞 응원 모습" loading="lazy"></button><figcaption>정문 응원</figcaption></figure>
     <figure><button type="button" data-src="photos/meal1.jpg"><img src="photos/meal1.jpg" alt="조식 자리" loading="lazy"></button><figcaption>조식</figcaption></figure>
   </div>
   <p class="gtip">사진을 누르면 크게 보고, <b>사진 저장하기</b>로 휴대폰 갤러리에 저장할 수 있어요.</p>
-  <div class="gall"><button type="button" id="saveAll">사진 전체 저장하기 (3장)</button></div>
+  <div class="gall"><button type="button" id="saveAll">사진 전체 저장하기 (4장)</button></div>
 </div></section>
 <section class="band" style="padding-top:0"><div class="wrap">
   <h2>계획과 결과</h2>
